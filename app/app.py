@@ -13,7 +13,7 @@ def get_args():
                         dest='model', default='model.pth', 
                         help='path to model')
     parser.add_argument('-stream', dest='stream',
-                action='store', default="bottom",
+                action='store', default="top",
                 help='ID or name of a stream, e.g. sample')
     parser.add_argument(
         '-debug', dest='debug',
