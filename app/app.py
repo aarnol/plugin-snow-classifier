@@ -59,7 +59,7 @@ if __name__ == "__main__":
     model = torch.load(args.model, map_location=args.device)
     model.eval()
     while True:
-        with Plugin() as plugin, Camera() as camera:
+        with Plugin() as plugin, Camera(args.stream) as camera:
             sample = camera.snapshot()
             run(model,sample, plugin)
             if not args.continuous:
