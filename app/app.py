@@ -13,7 +13,7 @@ def get_args():
                         dest='model', default='model.pth', 
                         help='path to model')
     parser.add_argument('-stream', dest='stream',
-                action='store', default="top",
+                action='store', default="bottom",
                 help='ID or name of a stream, e.g. sample')
     parser.add_argument(
         '-debug', dest='debug',
@@ -39,11 +39,13 @@ def run(model, sample, plugin):
     image = image.to(args.device).unsqueeze(0)
     pred = model(image)
     result = torch.argmax(pred).item()
-    if result == 0:
-        print('no snow')
-    elif result == 1:
-        print('snow')
-    plugin.publish('env.binary.snow', result, timestamp=timestamp)
+    if args.debug:
+        if result == 0:
+            print('no snow')
+        elif result == 1:
+            print('snow')
+    else:
+        plugin.publish('env.binary.snow', result, timestamp=timestamp)
 
 
 
