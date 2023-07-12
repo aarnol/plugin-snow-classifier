@@ -1,4 +1,6 @@
 # for additional pywaggle install options, see: https://github.com/waggle-sensor/pywaggle#installation-guides
 pywaggle[all]==0.56.0
-
+torch==2.0.1
+torchaudio==2.0.2
+torchvision==0.15.2
 
