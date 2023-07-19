@@ -5,7 +5,13 @@ from waggle.data.vision import Camera
 import torch
 from torchvision import transforms
 import argparse
-
+class croptop(object):
+    def __init__(self, amt) -> None:
+        self.amt = amt
+    def __call__(self, img):
+        img = transforms.functional.crop(img, top = self.amt,left=0,width = img.shape[2],height =img.shape[1]-200)
+        return img
+    
 #basically ripped from the surface water classifier at https://github.com/waggle-sensor/plugin-surfacewater
 def get_args():
     parser = argparse.ArgumentParser()
@@ -33,8 +39,10 @@ def run(model, sample, plugin):
     image =sample.data
     timestamp = sample.timestamp
     transformation = transforms.Compose([transforms.ToPILImage(),
+                                         transforms.ToTensor(),
+                                         croptop(200),
                                          transforms.Resize((224,224)),
-                                         transforms.ToTensor()])
+                                         ])
     image = transformation(image)
     image = image.to(args.device).unsqueeze(0)
     pred = model(image)
