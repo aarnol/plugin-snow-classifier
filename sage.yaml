@@ -1,4 +1,3 @@
-
 name: "snow classifier"
 version: "0.1.1"
 description: "classifies whether there is snow on the ground at the Bad River site"
