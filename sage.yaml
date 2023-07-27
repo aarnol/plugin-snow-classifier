@@ -15,11 +15,10 @@ source:
 inputs:
     - id: "model"
       type: "string"
-    - id: "continuous"
-      type: "boolean"
     - id: "stream"
       type: "string"
-    - id: "conf-thres"
-      type: "float"
-    - id: "iou-thres"
-      type: "float"
+    - id: "debug"
+      type: "string"
+    - id: "continuous"
+      type: "boolean"
+    
