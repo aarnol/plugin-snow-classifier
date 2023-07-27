@@ -8,7 +8,7 @@ inputs:
   -continuous
     type: boolean
 name: "snow classifier"
-version: "0.1.0"
+version: "0.1.1"
 description: "classifies whether there is snow on the ground at the Bad River site"
 keywords: "snow detection, machine learning"
 authors: "Alex Arnold <alexarnold2024@u.northwestern.edu>"
