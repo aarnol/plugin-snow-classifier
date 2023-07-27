@@ -24,9 +24,6 @@ df = sage_data_client.query(
 
 # print results in data frame
 print(df)
-# print filter names
-print(df.name.unique())
-# print number of rideshare vehicles detected
-print(len(df))
+
 ```
 For more information, please see [Access and use data documentation](https://docs.sagecontinuum.org/docs/tutorials/accessing-data) and [sage_data_client](https://pypi.org/project/sage-data-client/).
