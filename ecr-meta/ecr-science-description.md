@@ -18,7 +18,7 @@ import sage_data_client
 df = sage_data_client.query(
     start="-1h",
     filter={
-        "plugin": "registry.sagecontinuum.org/anagha/rideshare-detection:0.1.8"
+        "plugin": "registry.sagecontinuum.org/arnolda/snow-classifier:0.1.0"
     }
 )
 
